@@ -8,14 +8,11 @@ namespace MvcMusicStore.Controllers
 {
     public class HomeController : Controller
     {
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
 
-        public string Index()
+        //GET: /Home/
+        public ActionResult Index()
         {
-            return "hello from outside.";
+            return View();
         }
 
         public ActionResult About()

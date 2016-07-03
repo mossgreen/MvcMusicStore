@@ -26,14 +26,14 @@ namespace MvcMusicStore.Controllers
                 This prevents users from injecting Javascript into our View 
                 with a link like / Store / Browse ? Genre =< script > window.location =
                 ’http://hackersite.com’</script>. */
-            string message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
+            var message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
             return message;
         }
 
         //GET: /Store/Details
         public string Details(int id)
         {
-            string message = "Store.details, ID =" + id;
+            var message = "Store.details, ID =" + id;
             return message;
         }
     }
