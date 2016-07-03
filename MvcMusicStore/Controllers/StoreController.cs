@@ -20,7 +20,7 @@ namespace MvcMusicStore.Controllers
 
 
         //GET: /Store/Browse?genre=Disco
-        public string Browse(string genre)
+        public ActionResult Browse(string genre)
         {
 
            /* We’re using the HttpUtility.HtmlEncode utility method to sanitize the user input. 
@@ -28,7 +28,10 @@ namespace MvcMusicStore.Controllers
                 with a link like / Store / Browse ? Genre =< script > window.location =
                 ’http://hackersite.com’</script>. */
             var message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
-            return message;
+            //return message;
+
+            var genreModel = new Genre {Name = genre};
+            return View(genreModel);
         }
 
         //GET: /Store/Details
