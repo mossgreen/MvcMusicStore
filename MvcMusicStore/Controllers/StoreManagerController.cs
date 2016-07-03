@@ -15,32 +15,26 @@ namespace MvcMusicStore.Controllers
         private MusicStoreEntities db = new MusicStoreEntities();
 
         // GET: StoreManager
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
+            var albums = db.Albums.Include(a => a.Genre).Include(a => a.Artist);
             return View(albums.ToList());
         }
 
         // GET: StoreManager/Details/5
-        public ActionResult Details(int? id)
+        public ViewResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+           
             Album album = db.Albums.Find(id);
-            if (album == null)
-            {
-                return HttpNotFound();
-            }
             return View(album);
         }
 
         // GET: StoreManager/Create
         public ActionResult Create()
         {
-            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name");
             ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name");
+            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name");
+
             return View();
         }
 
@@ -58,8 +52,9 @@ namespace MvcMusicStore.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
             ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
+            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
+
             return View(album);
         }
 
