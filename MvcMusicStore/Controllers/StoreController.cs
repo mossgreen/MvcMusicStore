@@ -18,16 +18,23 @@ namespace MvcMusicStore.Controllers
         }
 
 
-        //GET: /Store/Browse
-        public string Browse()
+        //GET: /Store/Browse?genre=Disco
+        public string Browse(string genre)
         {
-            return "Hello from store.browse()";
+
+           /* We’re using the HttpUtility.HtmlEncode utility method to sanitize the user input. 
+                This prevents users from injecting Javascript into our View 
+                with a link like / Store / Browse ? Genre =< script > window.location =
+                ’http://hackersite.com’</script>. */
+            string message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
+            return message;
         }
 
         //GET: /Store/Details
-        public string Details()
+        public string Details(int id)
         {
-            return "hello fro Store.Details()";
+            string message = "Store.details, ID =" + id;
+            return message;
         }
     }
 }
