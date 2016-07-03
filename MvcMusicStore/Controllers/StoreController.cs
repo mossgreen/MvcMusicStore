@@ -23,15 +23,10 @@ namespace MvcMusicStore.Controllers
         //GET: /Store/Browse?genre=Disco
         public ActionResult Browse(string genre)
         {
+            // Retrieve Genre and its Associated Albums from database
+            var genreModel = storeDB.Genres.Include("Albums")
+                .Single(g => g.Name == genre);
 
-           /* We’re using the HttpUtility.HtmlEncode utility method to sanitize the user input. 
-                This prevents users from injecting Javascript into our View 
-                with a link like / Store / Browse ? Genre =< script > window.location =
-                ’http://hackersite.com’</script>. */
-            var message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
-            //return message;
-
-            var genreModel = new Genre {Name = genre};
             return View(genreModel);
         }
 
