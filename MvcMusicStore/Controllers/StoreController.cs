@@ -7,21 +7,15 @@ using MvcMusicStore.Models;
 
 namespace MvcMusicStore.Controllers
 {
+
     public class StoreController : Controller
     {
 
-        //We’ll use this “Index” method to implement our 
-        //listing page that lists all genres in our music store.
-        // GET: /Store/
+        MusicStoreEntities storeDB = new MusicStoreEntities();
+
         public ActionResult Index()
         {
-            var genres = new List<Genre>
-            {
-                new Genre {Name = "Disco"},
-                new Genre {Name = "Jazz"},
-                new Genre {Name ="Rock"}
-            };
-
+            var genres = storeDB.Genres.ToList();
             return View(genres);
         }
 

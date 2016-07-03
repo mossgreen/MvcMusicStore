@@ -80,3 +80,6 @@ C:\Projects\MvcMusicStore\MvcMusicStore\bin\Microsoft.Owin.Security.MicrosoftAcc
 C:\Projects\MvcMusicStore\MvcMusicStore\obj\Debug\MvcMusicStore.csprojResolveAssemblyReference.cache
 C:\Projects\MvcMusicStore\MvcMusicStore\obj\Debug\MvcMusicStore.dll
 C:\Projects\MvcMusicStore\MvcMusicStore\obj\Debug\MvcMusicStore.pdb
+C:\Projects\MvcMusicStore\MvcMusicStore\bin\EntityFramework.SqlServerCompact.dll
+C:\Projects\MvcMusicStore\MvcMusicStore\bin\System.Data.SqlServerCe.dll
+C:\Projects\MvcMusicStore\MvcMusicStore\bin\EntityFramework.SqlServerCompact.xml
