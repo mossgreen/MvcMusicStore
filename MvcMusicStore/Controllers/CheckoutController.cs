@@ -1,33 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using MvcMusicStore.Models;
 
 namespace MvcMusicStore.Controllers
 {
-
-    [Authorize] //the user be logged in but aren’t requiring that they be administrators.
-    public class CheckoutsController : Controller
+    [Authorize]
+    public class CheckoutController : Controller
     {
-
         MusicStoreEntities storeDB = new MusicStoreEntities();
         const string PromoCode = "FREE";
-
-
-        // GET: Checkouts
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+        //
         // GET: /Checkout/AddressAndPayment
         public ActionResult AddressAndPayment()
         {
             return View();
         }
-
+        //
         // POST: /Checkout/AddressAndPayment
         [HttpPost]
         public ActionResult AddressAndPayment(FormCollection values)
@@ -64,7 +53,7 @@ namespace MvcMusicStore.Controllers
                 return View(order);
             }
         }
-
+        //
         // GET: /Checkout/Complete
         public ActionResult Complete(int id)
         {
