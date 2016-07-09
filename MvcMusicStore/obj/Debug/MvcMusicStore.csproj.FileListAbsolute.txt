@@ -83,3 +83,6 @@ C:\Projects\MvcMusicStore\MvcMusicStore\obj\Debug\MvcMusicStore.pdb
 C:\Projects\MvcMusicStore\MvcMusicStore\bin\EntityFramework.SqlServerCompact.dll
 C:\Projects\MvcMusicStore\MvcMusicStore\bin\System.Data.SqlServerCe.dll
 C:\Projects\MvcMusicStore\MvcMusicStore\bin\EntityFramework.SqlServerCompact.xml
+C:\Projects\MvcMusicStore\MvcMusicStore\obj\Debug\MvcMusicStore.Migrations.InitialCreate.resources
+C:\Projects\MvcMusicStore\MvcMusicStore\obj\Debug\MvcMusicStore.csproj.GenerateResource.Cache
+C:\Projects\MvcMusicStore\MvcMusicStore\obj\Debug\MvcMusicStore.Migrations.InitialModel.resources
