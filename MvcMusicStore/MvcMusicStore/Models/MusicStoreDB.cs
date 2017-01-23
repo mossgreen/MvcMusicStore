@@ -6,6 +6,11 @@ using System.Web;
 
 namespace MvcMusicStore.Models
 {
+
+    /*
+     this class derived from EF's DbContext and gives you access to album, genre and artist 
+         
+    */
     public class MusicStoreDB : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
@@ -19,10 +24,10 @@ namespace MvcMusicStore.Models
         {
         }
 
-        public System.Data.Entity.DbSet<MvcMusicStore.Models.Album> Albums { get; set; }
+        public DbSet<Album> Albums { get; set; }
 
-        public System.Data.Entity.DbSet<MvcMusicStore.Models.Artist> Artists { get; set; }
+        public DbSet<Artist> Artists { get; set; }
 
-        public System.Data.Entity.DbSet<MvcMusicStore.Models.Genre> Genres { get; set; }
+        public DbSet<Genre> Genres { get; set; }
     }
 }

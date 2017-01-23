@@ -17,6 +17,13 @@ namespace MvcMusicStore.Controllers
         // GET: StoreManager
         public ActionResult Index()
         {
+            /*
+             the inclue is eager loading. On contract, there is also lazy loading
+             eager loading attempts to load all data using a single query
+             lazy loading is convenient, but potentially expensive
+             so Include is an optimizaiton to reduce the number of queries 
+             
+             */
             var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
             return View(albums.ToList());
         }
