@@ -7,6 +7,15 @@ namespace MvcMusicStore.Models
 {
     public class Album
     {
+        /*
+         Virtual properties are note requried, but they do give EF a hook into plain C# classes 
+         and enable features such as an efficient change-tracking mechanism.
+
+        The EF needs to know when a property value on a model changes, 
+        because it might need to issue a SQL update statement to reconcile those changes 
+        with the database. 
+             
+        */
         public virtual  int AlbumId { get; set; }
         public virtual int GenreId { get; set; }
         public virtual int ArtistId { get; set; }
