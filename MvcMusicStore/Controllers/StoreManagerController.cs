@@ -39,6 +39,13 @@ namespace MvcMusicStore.Controllers
         // GET: /StoreManager/Create
         public ActionResult Create()
         {
+            /*
+             1st para specifies the items to  place in the list
+             2nd is the name of the property containing the value to use when the user selects 
+             3rd is the text to display for each item
+             3rd para contains the value of the initially selected item
+             */
+
             ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name");
             ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name");
             return View();
